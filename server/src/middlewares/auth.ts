@@ -54,7 +54,6 @@ export async function auth(
 
     const { _id } = verified;
 
-    // Convert the id to ObjectId before querying the database
     const memberId = new mongoose.Types.ObjectId(_id);
 
     const member = await Member.findById(memberId);

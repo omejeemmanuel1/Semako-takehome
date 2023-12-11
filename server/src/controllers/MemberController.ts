@@ -113,7 +113,6 @@ export const makePayment = async (req: Request, res: Response) => {
       return res.status(404).json({ message: "Member not found" });
     }
 
-    // Deduct maintenance and admin fees
     const maintenanceFee = 10;
     const adminFee = 15;
 
@@ -124,7 +123,6 @@ export const makePayment = async (req: Request, res: Response) => {
       amount: amount,
     });
 
-    // Update account history for fee deduction
     member.accountHistory.push({
       date: new Date(),
       description: "Maintenance Fee Deduction",
